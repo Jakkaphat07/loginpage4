@@ -1,12 +1,13 @@
 import React from 'react'
-import { Lgnform, Logo, Greet, Wrapper, Loginbanner, Lgnfooter, Loginwrap } from './Styled'
-import Tokiomarinelogo from "../../asset/Tokiomarinelogosi.png";
-import Bannerback from "../../asset/bannerbgper.jpg"
+import { Lgnform, Logo, Greet, Wrapper, Loginbanner, Lgnfooter, Loginwrap, SwandFg, Switch } from './Styled'
+import Toggleswitch from '../Toggleswitch/Toggleswitch';
+import Tokiomarinelogo from "../../asset/Tokiomarinelog.png";
+import Rightsidebg from "../../asset/rightsidebg.png"
 
 function Login() {
   return (
     <Wrapper>
-        <div>
+        <Loginwrap>
             <Logo>
                 <img src={Tokiomarinelogo} />
             </Logo>
@@ -14,26 +15,31 @@ function Login() {
                 <h1>Welcome Back</h1>
                 <p>Enter your email and password to sign in</p>
             </Greet>
-            <div>
-                <form >
+            <Lgnform>
+                <div >
                     <p>Email</p>
-                    <input type="text" />
+                    <input type="text" placeholder='Your name or email'/>
                     <p>Password</p>
-                    <input type="password" /> <br />
-                    <a href='#'>Forget your password ?</a> <br />
+                    <input type="password" placeholder='Your password' style={{textDecoration:'﹡'}} /> 
+                    <SwandFg>
+                        <Switch>
+                            <Toggleswitch/>
+                        </Switch>
+                        <label>Remember me</label>
+                        <a href='#'>Forget your password?</a> 
+                    </SwandFg>
                     <button type='submit'>Login</button>
-                </form>
-            </div>
-        </div>
-        <Loginbanner>
-            <div>
-                <img src={Bannerback} />
-            </div>
-        </Loginbanner>
-        <Lgnfooter>
-            <p>Footer</p>
-        </Lgnfooter>
-    
+                </div>
+            </Lgnform>
+             
+            <Lgnfooter>
+                <p>2023, Fast Track</p>
+            </Lgnfooter>
+
+        </Loginwrap>
+
+        <Loginbanner style={{background:`url(${Rightsidebg})`}}/>
+       
     </Wrapper>
     
   )
